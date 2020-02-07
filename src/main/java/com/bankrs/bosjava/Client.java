@@ -47,7 +47,7 @@ public class Client {
         return c;
     }
 
-    public AppClient newAppClient(final String applicationId) {
-        return AppClient.newAppClient(wc, applicationId);
+    public AppClient newAppClient(final String applicationKey) {
+        return AppClient.newAppClient(wc, applicationKey);
     }
 }

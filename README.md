@@ -17,7 +17,7 @@ Construct new client, apply a specific application id and login a user.
 ```java
 
 Client.newClient(url, userAgent)
-    .newAppClient(applicationId)
+    .newAppClient(applicationKey)
         .loginUser((UserLoginParams.builder()
            .username(testUsername)
            .password(testPassword)
@@ -30,7 +30,7 @@ Use the user client to fetch bank access transactions.
 ```java
 UserClient userClient =
     Client.newClient(url, userAgent)
-        .newAppClient(applicationId)
+        .newAppClient(applicationKey)
             .newUserClient(token);
 
 userClient.transactionService()

@@ -16,20 +16,20 @@ import reactor.core.publisher.Mono;
  */
 @Slf4j
 public class AppClient {
-    private String applicationId;
+    private String applicationKey;
     private WebClient wc;
 
-    protected static AppClient newAppClient(WebClient wc, final String applicationId) {
+    protected static AppClient newAppClient(WebClient wc, final String applicationKey) {
         AppClient ac = new AppClient();
         ac.wc = wc;
-        ac.setApplicationId(applicationId);
+        ac.setApplicationKey(applicationKey);
         return ac;
     }
 
-    private void setApplicationId(final String applicationId) {
-        this.applicationId = applicationId;
+    private void setApplicationKey(final String applicationKey) {
+        this.applicationKey = applicationKey;
         this.wc = this.wc.mutate()
-                .defaultHeader("X-Application-Id", applicationId).build();
+                .defaultHeader("X-Application-Key", applicationKey).build();
     }
 
     public Mono<UserLoginResponse> loginUser(final UserLoginParams params) {

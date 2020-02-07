@@ -12,13 +12,13 @@ public class ClientTest {
 
     public static final String testUsername = "no@bankrs.com";
     public static final String testPassword = "no";
-    public static final String testApplicationId = "no";
+    public static final String testApplicationKey = "no";
 
     @Test
     public void testUserLogin() {
         UserLoginResponse response =
             Client.newClient(staginBankrsUrl, userAgent)
-                .newAppClient(testApplicationId)
+                .newAppClient(testApplicationKey)
                     .loginUser(UserLoginParams.builder()
                             .username(testUsername)
                             .password(testPassword)

@@ -25,7 +25,7 @@ public class UserClientTest {
                         .build();
 
         AppClient appClient = Client.newClient(ClientTest.staginBankrsUrl, ClientTest.userAgent)
-                .newAppClient(ClientTest.testApplicationId);
+                .newAppClient(ClientTest.testApplicationKey);
 
         UserLoginResponse response =
                 appClient.loginUser(params).block();
